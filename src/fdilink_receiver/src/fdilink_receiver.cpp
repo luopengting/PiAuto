@@ -17,6 +17,10 @@ bool FdiLinkReceiver::Init()
 
 void FdiLinkReceiver::ReceiveImu(const sensor_msgs::Imu& imuData)
 {
+    static int cnt = 0;
+    if (cnt++ > 10) {
+        return;
+    }
     ROS_INFO("timestamp=%lf, frameId=%s, q=%lf %lf %lf %lf, linAcc=%lf %lf %lf",
         imuData.header.stamp.nsec / 1e9, imuData.header.frame_id.c_str(),
         imuData.orientation.w, imuData.orientation.x, imuData.orientation.y, imuData.orientation.z,
