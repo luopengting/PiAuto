@@ -1,4 +1,5 @@
 ## 新建package
 ```
-catkin_create_pkg 
+cd src
+catkin_create_pkg fdilink_ahrs_receiver std_msgs roscpp rospy sensor_msgs
 ```
