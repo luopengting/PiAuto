@@ -23,6 +23,7 @@ ahrsBringup::ahrsBringup() :frist_sn_(false), serial_timeout_(20)
   pravite_nh.param("baud", serial_baud_, 115200);
 
   //publisher  创建发布对象
+  ROS_INFO("imu topic: %s", imu_topic_.c_str());
   imu_pub_ = nh_.advertise<sensor_msgs::Imu>(imu_topic_.c_str(), 10);
   mag_pose_pub_ = nh_.advertise<geometry_msgs::Pose2D>(mag_pose_2d_topic_.c_str(), 10);
   Euler_angles_pub_ = nh_.advertise<geometry_msgs::Vector3>(Euler_angles_topic_.c_str(), 10);

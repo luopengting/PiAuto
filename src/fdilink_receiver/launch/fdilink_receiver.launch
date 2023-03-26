@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="fdilink_receiver" name="fdilink_receiver_node" type="fdilink_receiver_node" output="screen" >
+    <!-- 是否输出debug信息 -->
+    <param name="debug"  value="false"/>
+
+    <!-- 发布的imu话题名 -->
+    <param name="imu_topic"  value="/imu"/> <!-- TODO: 为什么不是“imu”而是“/imu” -->
+  </node>
+
+</launch> 
